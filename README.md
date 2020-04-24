@@ -46,5 +46,5 @@ The instructions ask to consider long input.  This is handled via using a comman
 Use this ```README.md``` as input.  
 
 ```bash
-node index.js README.js
+npm start README.js
 ```
