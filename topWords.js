@@ -18,6 +18,20 @@
  * 
  ****************************************************************************************/
 
+ /**
+ * Remove characters we're not interested in.
+ * 
+ * Regex means these characters:
+ * . , - / # ! $ £ % & * ; + @ : { } = - _ ` ( )  => Replaced with empty character
+ * are replaced with an empty character.
+ * 
+ * @param {*} str 
+ */
+const removeExtraCharacters = (str) => {
+  let returnString =  str.replace(/[\.,-\/#!$£%\^&\*;+@:{}=\n\-_`~()]/g, "");
+  return returnString.replace(/\n/g, " ");
+};
+
 /**
  * Comparator used in sorting (Descending)
  * @param {*} obj1 
@@ -103,19 +117,6 @@ const getWordMap = (words) => {
   return wordMap;
 }
 
-/**
- * Remove characters we're not interested in.
- * 
- * Regex means these characters:
- * . , - / # ! $ £ % & * ; + @ : { } = - _ ` ( )  => Replaced with empty character
- * are replaced with an empty character.
- * 
- * @param {*} str 
- */
-const removeExtraCharacters = (str) => {
-  let returnString =  str.replace(/[\.,-\/#!$£%\^&\*;+@:{}=\n\-_`~()]/g, "");
-  return returnString.replace(/\n/g, " ");
-};
 
 /**
  * Module entry point.
