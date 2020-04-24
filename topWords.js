@@ -30,8 +30,7 @@ const comparator = (obj1, obj2) => {
 }
 
 const getInitialWords = (str) => {
-  const cleanString = removeExtraCharacters(str);
-  return cleanString.split(/ /);
+  return removeExtraCharacters(str).split(/ /);
 }
 
 /**
