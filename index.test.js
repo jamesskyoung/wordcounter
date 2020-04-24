@@ -27,5 +27,9 @@ describe('Test word counter', () => {
       const results = util.topWords("         //wont won't won't");
       expect(results).toEqual( ["won't", "wont"]);
     });
+    it('must be mixed case', () => {
+      const results = util.topWords(" a a a a A A A A");
+      expect(results[0]).toEqual('a');
+    });
   });
 });

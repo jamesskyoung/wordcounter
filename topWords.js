@@ -93,11 +93,12 @@ const getWordMap = (words) => {
     if (word.trim().length === 0) {
       return;
     }
-    if (wordMap.has(word)) {
-      let count = wordMap.get(word);
-      wordMap.set(word, count += 1);
+    const wordLc = word.toLowerCase();
+    if (wordMap.has(wordLc)) {
+      let count = wordMap.get(wordLc);
+      wordMap.set(wordLc, count += 1);
     } else {
-      wordMap.set(word, 1)
+      wordMap.set(wordLc, 1)
     }
   });
   return wordMap;
@@ -113,7 +114,8 @@ const getWordMap = (words) => {
  * @param {*} str 
  */
 const removeExtraCharacters = (str) => {
-  return str.replace(/[\.,-\/#!$£%\^&\*;+@:{}=\-_`~()]/g, "");
+  let returnString =  str.replace(/[\.,-\/#!$£%\^&\*;+@:{}=\n\-_`~()]/g, "");
+  return returnString.replace(/\n/g, " ");
 };
 
 /**
